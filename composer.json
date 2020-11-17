@@ -1,0 +1,44 @@
+{
+    "name": "astrotomic/php-twemoji",
+    "type": "library",
+    "description": "",
+    "keywords": [
+        "emoji",
+        "twemoji",
+        "unicode"
+    ],
+    "homepage": "https://github.com/Astrotomic/php-twemoji",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tom Witkowski",
+            "email": "gummibeer@astrotomic.info",
+            "homepage": "https://astrotomic.info",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "ext-mbstring": "*"
+    },
+    "require-dev": {
+        "pestphp/pest": "^0.3.0",
+        "spatie/emoji": "^2.1"
+    },
+    "suggest": {
+        "spatie/emoji": "*"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Astrotomic\\Twemoji\\": "src"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "vendor/bin/pest"
+    }
+}
