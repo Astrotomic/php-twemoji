@@ -9,7 +9,7 @@
 [![StyleCI](https://styleci.io/repos/307185950/shield)](https://styleci.io/repos/307185950)
 [![Total Downloads](https://img.shields.io/packagist/dt/astrotomic/php-twemoji.svg?label=Downloads&style=flat-square)](https://packagist.org/packages/astrotomic/php-twemoji)
 
-This package provides a fluent PHP OOP builder for [Open Graph protocol](https://ogp.me) and [Twitter Cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards).
+This package provides a fluent PHP OOP builder for [Twemoji](https://twemoji.twitter.com) URLs.
 
 ## Installation
 
