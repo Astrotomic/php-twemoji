@@ -1,7 +1,8 @@
 <?php
 
 use Astrotomic\Twemoji\Twemoji;
-use function PHPUnit\Framework\{assertEquals, assertMatchesRegularExpression};
+use function PHPUnit\Framework\assertEquals;
+use function PHPUnit\Framework\assertMatchesRegularExpression;
 
 it('can generate url', function (string $emoji, string $twemoji) {
     assertEquals(
