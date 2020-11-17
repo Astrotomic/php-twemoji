@@ -1,7 +1,6 @@
 {
     "name": "astrotomic/php-twemoji",
-    "type": "library",
-    "description": "",
+    "description": "Easily generate Twemoji URLs",
     "keywords": [
         "emoji",
         "twemoji",
@@ -19,11 +18,12 @@
     ],
     "require": {
         "php": "^7.4",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "ext-json": "*"
     },
     "require-dev": {
         "pestphp/pest": "^0.3.0",
-        "spatie/emoji": "^2.1"
+        "spatie/emoji": "2.1.3"
     },
     "suggest": {
         "spatie/emoji": "*"
