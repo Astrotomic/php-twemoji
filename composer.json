@@ -18,8 +18,8 @@
     ],
     "require": {
         "php": "^7.4",
-        "ext-mbstring": "*",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-mbstring": "*"
     },
     "require-dev": {
         "pestphp/pest": "^0.3.0",
