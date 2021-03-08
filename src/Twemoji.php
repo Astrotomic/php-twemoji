@@ -38,6 +38,27 @@ class Twemoji implements JsonSerializable
         return new static($normalized);
     }
 
+    /**
+     * Replaces a text including multiple emojis.
+     *
+     * This great regexp is taken from https://github.com/aaronpk/emoji-detector-php/blob/master/src/regexp.json,
+     * which by the time writing, matches all of the tested emojis.
+     *
+     * @param string $text
+     *
+     * @return string
+     */
+    public static function text(string $text): string
+    {
+       return preg_replace_callback(
+            '/(?:' . json_decode(file_get_contents(dirname(__FILE__).'/regexp.json')) . ')/u',
+            function($matches) {
+                return self::emoji($matches[0])->url();
+            },
+            $text
+        );
+    }
+
     public function base(string $base): self
     {
         $this->base = rtrim($base, '/');
