@@ -6,8 +6,8 @@ use JsonSerializable;
 
 class Twemoji implements JsonSerializable
 {
-    protected const SVG = 'svg';
-    protected const PNG = 'png';
+    public const SVG = 'svg';
+    public const PNG = 'png';
 
     /** @var string[] */
     protected array $codepoints;
@@ -45,14 +45,19 @@ class Twemoji implements JsonSerializable
      * which by the time writing, matches all of the tested emojis.
      *
      * @param string $text
+     * @param string $type
      *
      * @return string
      */
-    public static function text(string $text): string
+    public static function text(string $text, string $type = self::SVG): string
     {
        return preg_replace_callback(
             '/(?:' . json_decode(file_get_contents(dirname(__FILE__).'/regexp.json')) . ')/u',
-            function($matches) {
+            function($matches) use ($type) {
+                if ($type === self::PNG) {
+                    return self::emoji($matches[0])->png()->url();
+                }
+
                 return self::emoji($matches[0])->url();
             },
             $text

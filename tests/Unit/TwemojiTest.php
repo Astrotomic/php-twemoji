@@ -39,10 +39,11 @@ it('can generate url from spatie/emoji', function (string $emoji) {
     );
 })->with('spatie-emojis');
 
-it('can generate urls for multiple emojis inside a text', function (string $emoji) {
+it('can generate urls for multiple emojis inside a text in SVG format', function (string $emoji) {
     $text = "An emoji {$emoji} ... followed by another emoji {$emoji}";
-    $regexp = '/https:\/\/twemoji.maxcdn.com\/v\/latest\/svg\/([0-9a-f\-]+)\.svg/';
-    $twemojifiedText = Twemoji::text($text);
+
+    $regexp = "/https:\/\/twemoji.maxcdn.com\/v\/latest\/svg\/([0-9a-f\-]+)\.svg/";
+    $twemojifiedText = Twemoji::text($text, Twemoji::SVG);
 
     preg_match_all($regexp, $twemojifiedText, $matches);
 
@@ -51,4 +52,22 @@ it('can generate urls for multiple emojis inside a text', function (string $emoj
         $regexp,
         $twemojifiedText
     );
-})->with('emojis');
+
+})->with('emojis')->only();
+
+it('can generate urls for multiple emojis inside a text in PNG format', function (string $emoji) {
+    $text = "An emoji {$emoji} ... followed by another emoji {$emoji}";
+
+    $regexp = "/https:\/\/twemoji.maxcdn.com\/v\/latest\/72x72\/([0-9a-f\-]+)\.png/";
+    $twemojifiedText = Twemoji::text($text, Twemoji::PNG);
+
+    preg_match_all($regexp, $twemojifiedText, $matches);
+
+    assertEquals(2, count($matches[0]));
+    assertMatchesRegularExpression(
+        $regexp,
+        $twemojifiedText
+    );
+
+})->with('emojis')->only();
+
