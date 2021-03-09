@@ -34,6 +34,17 @@ Twemoji::emoji('🎉')->base('https://twemoji.astrotomic.info')->url();
 // https://twemoji.astrotomic.info/svg/1f389.svg
 ```
 
+Handling single sentences or full texts including emojis can be done with the `TwemojiReplacer`. As output format you
+can select between _html_ or _markdown_.
+
+```php
+$replacer = new \Astrotomic\Twemoji\TwemojiReplacer();
+
+echo $replacer->text('👋 Hallo Astrotomic-Contributor 🚀')->toMarkdown();
+echo $replacer->text('👋 Hallo Astrotomic-Contributor 🚀')->toHtml();
+```
+
+
 ## Testing
 
 ```bash
