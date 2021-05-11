@@ -4,7 +4,6 @@ namespace Astrotomic\Twemoji;
 
 use Astrotomic\Twemoji\Concerns\Configurable;
 use Closure;
-use Spatie\Emoji\Emoji;
 
 /**
  * @internal
@@ -70,6 +69,6 @@ class EmojiString
 
     protected function regexp(): string
     {
-        return '/(?:' . json_decode(file_get_contents(dirname(__FILE__).'/regexp.json')) . ')/u';
+        return '/(?:'.json_decode(file_get_contents(dirname(__FILE__).'/regexp.json')).')/u';
     }
 }

@@ -42,11 +42,11 @@ it('can replace emojis in plain text to html using png once', function () {
 it('can replace multi codepoint emojis in plain text', function () {
     $replacer = new Replacer();
     assertMatchesTextSnapshot($replacer->text(implode(PHP_EOL, [
-        "Hello 👋",
-        "Hello 👋🏻",
-        "Hello 👋🏼",
-        "Hello 👋🏽",
-        "Hello 👋🏾",
-        "Hello 👋🏿",
+        'Hello 👋',
+        'Hello 👋🏻',
+        'Hello 👋🏼',
+        'Hello 👋🏽',
+        'Hello 👋🏾',
+        'Hello 👋🏿',
     ]))->toMarkdown());
 });
