@@ -8,9 +8,9 @@ class Replacer
 {
     use Configurable;
 
-    public function text(string $text): EmojiString
+    public function text(string $text): EmojiText
     {
-        return (new EmojiString($text))
+        return (new EmojiText($text))
             ->base($this->base)
             ->type($this->type);
     }

@@ -37,9 +37,9 @@ class Twemoji implements JsonSerializable
         return new static($normalized);
     }
 
-    public static function text(string $text): EmojiString
+    public static function text(string $text): EmojiText
     {
-        return new EmojiString($text);
+        return new EmojiText($text);
     }
 
     public function url(): string

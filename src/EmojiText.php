@@ -8,7 +8,7 @@ use Closure;
 /**
  * @internal
  */
-class EmojiString
+class EmojiText
 {
     use Configurable;
 
