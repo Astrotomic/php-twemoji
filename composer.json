@@ -19,11 +19,12 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "ext-json": "*",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "spatie/emoji": "^2.3.0"
     },
     "require-dev": {
         "pestphp/pest": "^0.3.0",
-        "spatie/emoji": "^2.2.0"
+        "spatie/pest-plugin-snapshots": "^1.0"
     },
     "suggest": {
         "spatie/emoji": "*"

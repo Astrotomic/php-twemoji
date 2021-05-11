@@ -2,19 +2,18 @@
 
 namespace Astrotomic\Twemoji;
 
+use Astrotomic\Twemoji\Concerns\Configurable;
 use JsonSerializable;
 
 class Twemoji implements JsonSerializable
 {
-    protected const SVG = 'svg';
-    protected const PNG = 'png';
+    use Configurable;
+
+    public const SVG = 'svg';
+    public const PNG = 'png';
 
     /** @var string[] */
     protected array $codepoints;
-
-    protected string $type = self::SVG;
-
-    protected string $base = 'https://twemoji.maxcdn.com/v/latest';
 
     /**
      * @param string[] $codepoints
@@ -38,25 +37,9 @@ class Twemoji implements JsonSerializable
         return new static($normalized);
     }
 
-    public function base(string $base): self
+    public static function text(string $text): EmojiString
     {
-        $this->base = rtrim($base, '/');
-
-        return $this;
-    }
-
-    public function svg(): self
-    {
-        $this->type = self::SVG;
-
-        return $this;
-    }
-
-    public function png(): self
-    {
-        $this->type = self::PNG;
-
-        return $this;
+        return new EmojiString($text);
     }
 
     public function url(): string

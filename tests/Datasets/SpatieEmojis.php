@@ -3,8 +3,7 @@
 use Spatie\Emoji\Emoji;
 
 dataset('spatie-emojis', function () {
-    $class = new ReflectionClass(Emoji::class);
-    foreach ($class->getConstants() as $name => $emoji) {
+    foreach (Emoji::all() as $name => $emoji) {
         yield [$emoji, $name];
     }
 });
