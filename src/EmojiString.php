@@ -35,7 +35,7 @@ class EmojiString
         ], $attributes);
 
         $attrs = implode(' ', array_map(
-            fn(string $key, string $value): string => "{$key}=\"{$value}\"",
+            fn (string $key, string $value): string => "{$key}=\"{$value}\"",
             array_keys($attributes),
             array_values($attributes)
         ));
@@ -49,8 +49,8 @@ class EmojiString
 
         foreach (array_chunk(Emoji::all(), 1000) as $emojis) {
             $text = preg_replace_callback(
-                "/(" . implode('|', array_map('preg_quote', $emojis)) . ")/",
-                fn(array $matches): string => str_replace(
+                '/('.implode('|', array_map('preg_quote', $emojis)).')/',
+                fn (array $matches): string => str_replace(
                     ['%{alt}', '%{src}'],
                     [
                         $alt
