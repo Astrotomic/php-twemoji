@@ -47,26 +47,29 @@ class EmojiString
     {
         $text = $this->text;
 
-        foreach (array_chunk(Emoji::all(), 1000) as $emojis) {
-            $text = preg_replace_callback(
-                '/('.implode('|', array_map('preg_quote', $emojis)).')/',
-                fn (array $matches): string => str_replace(
-                    ['%{alt}', '%{src}'],
-                    [
-                        $alt
-                            ? $alt($matches[0])
-                            : $matches[0],
-                        Twemoji::emoji($matches[0])
-                            ->base($this->base)
-                            ->type($this->type)
-                            ->url(),
-                    ],
-                    $replacement
-                ),
-                $text
-            );
-        }
+        $text = preg_replace_callback(
+            $this->regexp(),
+            fn (array $matches): string => str_replace(
+                ['%{alt}', '%{src}'],
+                [
+                    $alt
+                        ? $alt($matches[0])
+                        : $matches[0],
+                    Twemoji::emoji($matches[0])
+                        ->base($this->base)
+                        ->type($this->type)
+                        ->url(),
+                ],
+                $replacement
+            ),
+            $text
+        );
 
         return $text;
+    }
+
+    protected function regexp(): string
+    {
+        return '/(?:' . json_decode(file_get_contents(dirname(__FILE__).'/regexp.json')) . ')/u';
     }
 }

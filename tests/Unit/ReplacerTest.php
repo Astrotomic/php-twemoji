@@ -38,3 +38,15 @@ it('can replace emojis in plain text to html using png once', function () {
     assertMatchesTextSnapshot($replacer->text("Hello \u{1F44B},\nEmojis are so cool! 🚀🎉")->png()->toHtml());
     assertMatchesTextSnapshot($replacer->text("Hello \u{1F44B},\nEmojis are so cool! 🎉🚀")->toHtml());
 });
+
+it('can replace multi codepoint emojis in plain text', function () {
+    $replacer = new Replacer();
+    assertMatchesTextSnapshot($replacer->text(implode(PHP_EOL, [
+        "Hello 👋",
+        "Hello 👋🏻",
+        "Hello 👋🏼",
+        "Hello 👋🏽",
+        "Hello 👋🏾",
+        "Hello 👋🏿",
+    ]))->toMarkdown());
+});

@@ -1,0 +1,6 @@
+Hello ![👋](https://twemoji.maxcdn.com/v/latest/svg/1f44b.svg)
+Hello ![👋🏻](https://twemoji.maxcdn.com/v/latest/svg/1f44b-1f3fb.svg)
+Hello ![👋🏼](https://twemoji.maxcdn.com/v/latest/svg/1f44b-1f3fc.svg)
+Hello ![👋🏽](https://twemoji.maxcdn.com/v/latest/svg/1f44b-1f3fd.svg)
+Hello ![👋🏾](https://twemoji.maxcdn.com/v/latest/svg/1f44b-1f3fe.svg)
+Hello ![👋🏿](https://twemoji.maxcdn.com/v/latest/svg/1f44b-1f3ff.svg)
