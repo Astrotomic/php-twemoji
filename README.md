@@ -21,6 +21,10 @@ composer require astrotomic/php-twemoji
 
 ## Usage
 
+### Single Emojis
+
+You can use the `Twemoji::emoji()` method to get the Twemoji image URL for a single emoji.
+
 ```php
 use Astrotomic\Twemoji\Twemoji;
 
@@ -32,6 +36,39 @@ Twemoji::emoji('🎉')->png()->url();
 
 Twemoji::emoji('🎉')->base('https://twemoji.astrotomic.info')->url();
 // https://twemoji.astrotomic.info/svg/1f389.svg
+```
+
+### Multiple Emojis in Text
+
+If you have a text and want to replace all emojis with Twemoji image tags (Markdown or HTML) you can use the `Twemoji::text()` method.
+This isn't aware of emojis in attributes or anything - it just finds and replaces all Emojis in the given string.
+
+```php
+use Astrotomic\Twemoji\Twemoji;
+
+Twemoji::text("Hello 👋🏿")->toMarkdown();
+// Hello ![👋🏿](https://twemoji.maxcdn.com/v/latest/svg/1f44b-1f3ff.svg)
+
+Twemoji::text("Hello 👋🏿")->png()->toMarkdown();
+// Hello ![👋🏿](https://twemoji.maxcdn.com/v/latest/72x72/1f44b-1f3ff.png)
+```
+
+In case you want to configure the replacer once and bind it to your container for example you can do that as well.
+
+```php
+use Astrotomic\Twemoji\Replacer;
+
+$replacer = (new Replacer())->png();
+
+$replacer->text("Hello 👋🏿")->toMarkdown();
+// Hello ![👋🏿](https://twemoji.maxcdn.com/v/latest/72x72/1f44b-1f3ff.png)
+```
+
+You can also override the replacer configuration for the specific replace operation without altering the replacer configuration.
+
+```php
+$replacer->text("Hello 👋🏿")->svg()->toMarkdown();
+// Hello ![👋🏿](https://twemoji.maxcdn.com/v/latest/svg/1f44b-1f3ff.svg)
 ```
 
 ## Testing
