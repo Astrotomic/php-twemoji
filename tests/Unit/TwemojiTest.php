@@ -3,6 +3,7 @@
 use Astrotomic\Twemoji\Twemoji;
 use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertMatchesRegularExpression;
+use function Spatie\Snapshots\assertMatchesTextSnapshot;
 
 it('can generate url', function (string $emoji, string $twemoji) {
     assertEquals(
@@ -38,3 +39,11 @@ it('can generate url from spatie/emoji', function (string $emoji) {
         Twemoji::emoji($emoji)->url()
     );
 })->with('spatie-emojis');
+
+it('can replace emojis in plain text to markdown', function () {
+    assertMatchesTextSnapshot(Twemoji::text("Hello \u{1F44B},\nEmojis are so cool! 🚀🎉")->toMarkdown());
+});
+
+it('can replace emojis in plain text to html', function () {
+    assertMatchesTextSnapshot(Twemoji::text("Hello \u{1F44B},\nEmojis are so cool! 🚀🎉")->toHtml());
+});

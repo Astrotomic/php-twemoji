@@ -1,0 +1,2 @@
+Hello <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f44b.png" alt="👋" width="72" height="72" loading="lazy" class="twemoji" />,
+Emojis are so cool! <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f389.png" alt="🎉" width="72" height="72" loading="lazy" class="twemoji" /><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f680.png" alt="🚀" width="72" height="72" loading="lazy" class="twemoji" />
