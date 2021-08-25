@@ -5,9 +5,6 @@ namespace Astrotomic\Twemoji;
 use Astrotomic\Twemoji\Concerns\Configurable;
 use Closure;
 
-/**
- * @internal
- */
 class EmojiText
 {
     use Configurable;
