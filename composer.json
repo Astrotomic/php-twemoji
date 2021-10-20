@@ -23,6 +23,7 @@
     },
     "require-dev": {
         "pestphp/pest": "^0.3.0",
+        "s9e/regexp-builder": "^1.4",
         "spatie/emoji": "^2.3.0",
         "spatie/pest-plugin-snapshots": "^1.0"
     },
