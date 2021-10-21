@@ -41,6 +41,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "generate": "php ./generate.php",
         "test": "vendor/bin/pest"
     }
 }
