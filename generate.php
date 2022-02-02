@@ -13,6 +13,7 @@ $emoji = array_map(function ($emoji) {
     if (strpos($emoji, "\u{200D}") === false) {
         $emoji = str_replace("\u{FE0F}", '', $emoji);
     }
+
     return $emoji;
 }, Spatie\Emoji\Emoji::all());
 
