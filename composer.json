@@ -1,13 +1,12 @@
 {
     "name": "astrotomic/php-twemoji",
     "description": "Easily generate Twemoji URLs",
+    "license": "MIT",
     "keywords": [
         "emoji",
         "twemoji",
         "unicode"
     ],
-    "homepage": "https://github.com/Astrotomic/php-twemoji",
-    "license": "MIT",
     "authors": [
         {
             "name": "Tom Witkowski",
@@ -16,6 +15,7 @@
             "role": "Developer"
         }
     ],
+    "homepage": "https://github.com/Astrotomic/php-twemoji",
     "require": {
         "php": "^7.4 || ^8.0",
         "ext-json": "*",
@@ -30,16 +30,16 @@
     "suggest": {
         "spatie/emoji": "*"
     },
-    "config": {
-        "sort-packages": true
-    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Astrotomic\\Twemoji\\": "src"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
     "scripts": {
         "generate": "php ./generate.php",
         "test": "vendor/bin/pest"
