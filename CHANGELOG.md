@@ -4,7 +4,7 @@ All notable changes to `php-twemoj` will be documented in this file
 
 ## v0.2.2 - 2022-02-05
 
-- fix Emoji RegEx to match Emojis. - [#6](https://github.com/Astrotomic/php-twemoji/pull/6) & [#9](https://github.com/Astrotomic/php-twemoji/pull/9)
+-   fix Emoji RegEx to match Emojis. - [#6](https://github.com/Astrotomic/php-twemoji/pull/6) & [#9](https://github.com/Astrotomic/php-twemoji/pull/9)
 
 ## v0.2.1 - 2021-08-25
 
