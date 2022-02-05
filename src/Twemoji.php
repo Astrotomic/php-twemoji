@@ -16,7 +16,7 @@ class Twemoji implements JsonSerializable
     protected array $codepoints;
 
     /**
-     * @param string[] $codepoints
+     * @param  string[]  $codepoints
      */
     public function __construct(array $codepoints)
     {
@@ -32,9 +32,14 @@ class Twemoji implements JsonSerializable
             $chars
         );
 
-        $normalized = array_diff($codepoints, ['fe0f']);
+        // Normalize codepoints for Twemoji
+        $codepoints[0] = ltrim($codepoints[0], '0');
 
-        return new static($normalized);
+        if (! in_array('200d', $codepoints)) {
+            $codepoints = array_diff($codepoints, ['fe0f']);
+        }
+
+        return new static($codepoints);
     }
 
     public static function text(string $text): EmojiText
