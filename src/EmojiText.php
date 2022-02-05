@@ -66,6 +66,6 @@ class EmojiText
 
     protected function regexp(): string
     {
-        return '/(?:'.json_decode(file_get_contents(dirname(__FILE__).'/regexp.json')).')/u';
+        return '/'.file_get_contents(__DIR__.'/emoji_bytes.regexp').'/';
     }
 }
