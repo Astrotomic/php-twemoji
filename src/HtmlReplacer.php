@@ -12,7 +12,7 @@ class HtmlReplacer
 
     public function __construct()
     {
-        if (!class_exists(HtmlPageCrawler::class)) {
+        if (! class_exists(HtmlPageCrawler::class)) {
             throw new RuntimeException(
                 sprintf('Cannot use %s method unless `wa72/htmlpagedom` is installed.', __METHOD__)
             );
@@ -39,6 +39,7 @@ class HtmlReplacer
                 ->type($this->type)
                 ->toHtml();
             $node->makeEmpty()->setInnerHtml($twemojiContent);
+
             return $node;
         });
 
