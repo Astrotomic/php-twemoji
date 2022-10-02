@@ -31,10 +31,15 @@ class HtmlReplacer
             return $html;
         }
 
-        $bodyChildren = $bodyChildren->each(function (HtmlPageCrawler $node) {
-            // TODO: consider some sort of filtering here to only twemoji encode "Text Nodes".
-            // It's just a bit harder to do in PHP than JS it seems.
-            $twemojiContent = (new EmojiText($node->innerText()))
+        $bodyChildren->each(function (HtmlPageCrawler $node) {
+            // Bail early if attempt to get inner text fails...
+            try {
+                $nodeInnterText = $node->innerText();
+            } catch (\Throwable $throwable) {
+                return  $node;
+            }
+
+            $twemojiContent = (new EmojiText($nodeInnterText))
                 ->base($this->base)
                 ->type($this->type)
                 ->toHtml();
