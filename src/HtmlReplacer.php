@@ -36,14 +36,7 @@ class HtmlReplacer
         $textNodes = $body->filterXPath('.//*[normalize-space(text())]');
 
         $textNodes->each(function (HtmlPageCrawler $node) {
-            // Bail early if attempt to get inner text fails...
-            try {
-                $nodeInnterText = $node->innerText();
-            } catch (\Throwable $throwable) {
-                return  $node;
-            }
-
-            $twemojiContent = (new EmojiText($nodeInnterText))
+            $twemojiContent = (new EmojiText($node->innerText()))
                 ->base($this->base)
                 ->type($this->type)
                 ->toHtml();
