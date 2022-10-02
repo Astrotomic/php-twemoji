@@ -25,7 +25,7 @@ class Twemoji implements JsonSerializable
 
     public static function emoji(string $emoji): self
     {
-        $chars = preg_split('//u', $emoji, null, PREG_SPLIT_NO_EMPTY);
+        $chars = preg_split('//u', $emoji, -1, PREG_SPLIT_NO_EMPTY);
 
         $codepoints = array_map(
             fn (string $code): string => dechex(mb_ord($code)),
@@ -58,6 +58,7 @@ class Twemoji implements JsonSerializable
         );
     }
 
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return $this->url();
