@@ -22,13 +22,15 @@
         "ext-mbstring": "*"
     },
     "require-dev": {
-        "pestphp/pest": "^0.3.0",
+        "pestphp/pest": "^1.21",
         "s9e/regexp-builder": "^1.4",
         "spatie/emoji": "^2.3.0",
-        "spatie/pest-plugin-snapshots": "^1.0"
+        "spatie/pest-plugin-snapshots": "^1.0",
+        "wa72/htmlpagedom": "^2.0 || ^3.0"
     },
     "suggest": {
-        "spatie/emoji": "*"
+        "spatie/emoji": "*",
+        "wa72/htmlpagedom": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -38,7 +40,10 @@
         }
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     },
     "scripts": {
         "generate": "php ./generate.php",
