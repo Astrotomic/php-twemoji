@@ -60,4 +60,28 @@ HTML,
     </body>
 </html>
 HTML,
+    <<<'HTML'
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Test with Emoji in ALT text</title>
+    </head>
+    <body>
+        <header>
+            <h1>Hello Friends 👋</h1>
+            <img src="http://fillmurray.lucidinternets.com/200/300" alt="A random image of Bill Murray 🍻" title="maybe an image of bill murry with a raised glass 🍺">
+        </header>
+        <main>
+        <section>
+            <h2>Time for a ElePHPant RAVE!</h2>
+            <p>🐘🐘🐘🐘</p>
+            <p>🐘🐘🐘</p>
+            <p>🐘🐘🐘🐘🐘</p>
+            <p>🐘🐘</p>
+        </section>
+        </main>
+    </body>
+</html>
+HTML,
 ]);

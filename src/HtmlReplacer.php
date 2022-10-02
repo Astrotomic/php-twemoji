@@ -4,11 +4,14 @@ namespace Astrotomic\Twemoji;
 
 use Astrotomic\Twemoji\Concerns\Configurable;
 use RuntimeException;
+use Wa72\HtmlPageDom\HtmlPage;
 use Wa72\HtmlPageDom\HtmlPageCrawler;
 
 class HtmlReplacer
 {
     use Configurable;
+
+    public static string $shouldNotBeParsed = "/^(?:iframe|noframes|noscript|script|select|style|textarea)$/";
 
     public function __construct()
     {
@@ -22,16 +25,17 @@ class HtmlReplacer
     public function parse(string $html): string
     {
         // Parse the html
-        $parsedHtml = HtmlPageCrawler::create($html);
-        // Fetch the body node children if any
-        $bodyChildren = $parsedHtml
-            ->filter('body > *');
+        $parsedHtml = new HtmlPage($html);
+        $body = $parsedHtml->getBody();
 
-        if ($bodyChildren->count() === 0) {
+        if ($body->children()->count() === 0) {
             return $html;
         }
 
-        $bodyChildren->each(function (HtmlPageCrawler $node) {
+        // Use xpath to filter only the "TextNodes" within each "Element"
+        $textNodes = $body->filterXPath('.//*[normalize-space(text())]');
+
+        $textNodes->each(function (HtmlPageCrawler $node) {
             // Bail early if attempt to get inner text fails...
             try {
                 $nodeInnterText = $node->innerText();
@@ -48,6 +52,6 @@ class HtmlReplacer
             return $node;
         });
 
-        return $parsedHtml->saveHTML();
+        return $parsedHtml->save();
     }
 }
