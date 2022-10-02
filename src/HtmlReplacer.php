@@ -10,11 +10,8 @@ class HtmlReplacer
 {
     use Configurable;
 
-    public static $textNodes = [
-        'h1', 'h2'
-    ];
-
-    public function __construct() {
+    public function __construct()
+    {
         if (!class_exists(HtmlPageCrawler::class)) {
             throw new RuntimeException(
                 sprintf('Cannot use %s method unless `wa72/htmlpagedom` is installed.', __METHOD__)
