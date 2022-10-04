@@ -11,6 +11,13 @@ HTML,
     <<<'HTML'
 <!DOCTYPE html>
 <html lang="en">
+  <head></head>
+  <body>Hey 🚀</body>
+</html>
+HTML,
+    <<<'HTML'
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -112,6 +119,18 @@ HTML,
 ]);
 
 dataset('html-fragments', [
+    <<<'HTML'
+<p>🚀</p>
+HTML,
+    <<<'HTML'
+<img src="" alt="🎉"/>
+HTML,
+    <<<'HTML'
+<a href="" title="🎈">Link ⛓️</a>
+HTML,
+        <<<'HTML'
+<script>document.innerHTML = '🤷‍♂️';</script>
+HTML,
     <<<'HTML'
 <section class="comment-box">
     <div class="comment-content">

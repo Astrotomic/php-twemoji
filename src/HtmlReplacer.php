@@ -28,14 +28,13 @@ class HtmlReplacer
         $parsedHtmlRoot = new HtmlPageCrawler($html);
         // Filter parsed HTML "root" into the twemoji relevant parts...
         $parsedHtml = $this->whenHtmlDocFilterBody($parsedHtmlRoot);
-
-        // If the filtered DOM fragment doesn't have any children, return the input HTML.
-        if ($parsedHtml->children()->count() === 0) {
-            return $html;
-        }
-
         // Use xpath to filter only the "TextNodes" within every "Element"
         $textNodes = $parsedHtml->filterXPath('.//*[normalize-space(text())]');
+
+        // If the filtered DOM fragment doesn't have TextNode children, return the input HTML.
+        if ($textNodes->count() === 0) {
+            return $html;
+        }
 
         $textNodes->each(function (HtmlPageCrawler $node) {
             $twemojiContent = (new EmojiText($node->innerText()))
