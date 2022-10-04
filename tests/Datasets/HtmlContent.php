@@ -1,5 +1,55 @@
 <?php
 
+dataset('html-fragments', [
+    <<<'HTML'
+<p>🚀</p>
+HTML,
+    <<<'HTML'
+<img src="" alt="🎉"/>
+HTML,
+    <<<'HTML'
+<a href="" title="🎈">Link ⛓️</a>
+HTML,
+    <<<'HTML'
+<script>document.innerHTML = '🤷‍♂️';</script>
+HTML,
+    <<<'HTML'
+<section class="comment-box">
+    <div class="comment-content">
+        <h2>Time for a ElePHPant RAVE!</h2>
+        <p>🐘🐘🐘🐘</p>
+        <p>🐘🐘🐘</p>
+        <p>🐘🐘🐘🐘🐘</p>
+        <p>🐘🐘</p>
+    </div>
+    <section class="sub-comments">
+        <section class="comment-box">
+            <div class="comment-content">
+                <h2>Time for a cRUSTation RAVE!</h2>
+                <p>🦀🦀🦀🦀</p>
+                <p>🦀🦀</p>
+                <p>🦀🦀🦀🦀</p>
+                <p>🦀</p>
+            </div>
+        </section>
+        <section class="comment-box">
+            <div class="comment-content">
+                <p>but what if the crabs and elephants rave together?!</p>
+            </div>
+        </section>
+    </section>
+</section>
+HTML,
+    <<<'HTML'
+<article>
+    <p>Lorem 😂😂 ipsum 🕵️‍♂️dolor sit✍️ amet, consectetur adipiscing😇😇🤙 elit, sed do eiusmod🥰 tempor 😤😤🏳️‍🌈incididunt ut 👏labore 👏et👏 dolore 👏magna👏 aliqua.</p>
+    <p>Ut enim ad minim 🐵✊🏿veniam,❤️😤😫😩💦💦 quis nostrud 👿🤮exercitation ullamco 🧠👮🏿‍♀️🅱️laboris nisi ut aliquip❗️ ex ea commodo consequat.</p>
+    <p>💯Duis aute💦😂😂😂 irure dolor 👳🏻‍♂️🗿in reprehenderit 🤖👻👎in voluptate velit esse cillum dolore 🙏🙏eu fugiat🤔 nulla pariatur.</p>
+    <p>🙅‍♀️🙅‍♀️Excepteur sint occaecat🤷‍♀️🤦‍♀️ cupidatat💅 non💃 proident,👨‍👧 sunt🤗 in culpa😥😰😨 qui officia🤩🤩 deserunt mollit 🧐anim id est laborum.🤔🤔</p>
+</article>
+HTML,
+]);
+
 dataset('html-pages', [
     <<<'HTML'
 <!DOCTYPE html>
@@ -115,55 +165,5 @@ HTML,
         </script>
     </body>
 </html>
-HTML,
-]);
-
-dataset('html-fragments', [
-    <<<'HTML'
-<p>🚀</p>
-HTML,
-    <<<'HTML'
-<img src="" alt="🎉"/>
-HTML,
-    <<<'HTML'
-<a href="" title="🎈">Link ⛓️</a>
-HTML,
-        <<<'HTML'
-<script>document.innerHTML = '🤷‍♂️';</script>
-HTML,
-    <<<'HTML'
-<section class="comment-box">
-    <div class="comment-content">
-        <h2>Time for a ElePHPant RAVE!</h2>
-        <p>🐘🐘🐘🐘</p>
-        <p>🐘🐘🐘</p>
-        <p>🐘🐘🐘🐘🐘</p>
-        <p>🐘🐘</p>
-    </div>
-    <section class="sub-comments">
-        <section class="comment-box">
-            <div class="comment-content">
-                <h2>Time for a cRUSTation RAVE!</h2>
-                <p>🦀🦀🦀🦀</p>
-                <p>🦀🦀</p>
-                <p>🦀🦀🦀🦀</p>
-                <p>🦀</p>
-            </div>
-        </section>
-        <section class="comment-box">
-            <div class="comment-content">
-                <p>but what if the crabs and elephants rave together?!</p>
-            </div>
-        </section>
-    </section>
-</section>
-HTML,
-    <<<'HTML'
-<article>
-    <p>Lorem 😂😂 ipsum 🕵️‍♂️dolor sit✍️ amet, consectetur adipiscing😇😇🤙 elit, sed do eiusmod🥰 tempor 😤😤🏳️‍🌈incididunt ut 👏labore 👏et👏 dolore 👏magna👏 aliqua.</p>
-    <p>Ut enim ad minim 🐵✊🏿veniam,❤️😤😫😩💦💦 quis nostrud 👿🤮exercitation ullamco 🧠👮🏿‍♀️🅱️laboris nisi ut aliquip❗️ ex ea commodo consequat.</p>
-    <p>💯Duis aute💦😂😂😂 irure dolor 👳🏻‍♂️🗿in reprehenderit 🤖👻👎in voluptate velit esse cillum dolore 🙏🙏eu fugiat🤔 nulla pariatur.</p>
-    <p>🙅‍♀️🙅‍♀️Excepteur sint occaecat🤷‍♀️🤦‍♀️ cupidatat💅 non💃 proident,👨‍👧 sunt🤗 in culpa😥😰😨 qui officia🤩🤩 deserunt mollit 🧐anim id est laborum.🤔🤔</p>
-</article>
 HTML,
 ]);
