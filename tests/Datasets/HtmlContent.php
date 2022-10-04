@@ -84,4 +84,31 @@ HTML,
     </body>
 </html>
 HTML,
+<<<'HTML'
+<section class="comment-box">
+    <div class="comment-content">
+        <h2>Time for a ElePHPant RAVE!</h2>
+        <p>🐘🐘🐘🐘</p>
+        <p>🐘🐘🐘</p>
+        <p>🐘🐘🐘🐘🐘</p>
+        <p>🐘🐘</p>
+    </div>
+    <section class="sub-comments">
+        <section class="comment-box">
+            <div class="comment-content">
+                <h2>Time for a cRUSTation RAVE!</h2>
+                <p>🦀🦀🦀🦀</p>
+                <p>🦀🦀</p>
+                <p>🦀🦀🦀🦀</p>
+                <p>🦀</p>
+            </div>
+        </section>
+        <section class="comment-box">
+            <div class="comment-content">
+                <p>but what if the crabs and elephants rave together?!</p>
+            </div>
+        </section>
+    </section>
+</section>
+HTML,
 ]);
