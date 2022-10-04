@@ -4,9 +4,11 @@ namespace Astrotomic\Twemoji;
 
 use Astrotomic\Twemoji\Concerns\Configurable;
 use RuntimeException;
-use Wa72\HtmlPageDom\HtmlPage;
 use Wa72\HtmlPageDom\HtmlPageCrawler;
 
+/**
+ * @internal This class is marked as Internal as it is considered Experimental. Code subject to change until warning removed.
+ */
 class HtmlReplacer
 {
     use Configurable;
