@@ -27,7 +27,7 @@ class HtmlReplacer
         // Parse the HTML page or fragment...
         $parsedHtmlRoot = new HtmlPageCrawler($html);
         // Filter parsed HTML "root" into the twemoji relevant parts...
-        $parsedHtml = $this->checkHtmlIsDocumentAndSelectBody($parsedHtmlRoot);
+        $parsedHtml = $this->whenHtmlDocFilterBody($parsedHtmlRoot);
 
         // If the filtered DOM fragment doesn't have any children, return the input HTML.
         if ($parsedHtml->children()->count() === 0) {
@@ -50,7 +50,7 @@ class HtmlReplacer
         return $parsedHtmlRoot->saveHTML();
     }
 
-    private function checkHtmlIsDocumentAndSelectBody(HtmlPageCrawler $htmlRoot): HtmlPageCrawler
+    private function whenHtmlDocFilterBody(HtmlPageCrawler $htmlRoot): HtmlPageCrawler
     {
         if ($htmlRoot->isHtmlDocument()) {
             return $htmlRoot->filter('body');
