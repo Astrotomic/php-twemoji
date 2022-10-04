@@ -1,14 +1,14 @@
 <?php
 
 dataset('html-pages', [
-<<<'HTML'
+    <<<'HTML'
 <!DOCTYPE html>
 <html lang="en">
   <head></head>
   <body></body>
 </html>
 HTML,
-<<<'HTML'
+    <<<'HTML'
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,7 +21,7 @@ HTML,
     <body></body>
 </html>
 HTML,
-<<<'HTML'
+    <<<'HTML'
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -42,7 +42,7 @@ HTML,
     </body>
 </html>
 HTML,
-<<<'HTML'
+    <<<'HTML'
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -60,7 +60,7 @@ HTML,
     </body>
 </html>
 HTML,
-<<<'HTML'
+    <<<'HTML'
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -84,7 +84,7 @@ HTML,
     </body>
 </html>
 HTML,
-<<<'HTML'
+    <<<'HTML'
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -113,7 +113,7 @@ HTML,
 
 
 dataset('html-fragments', [
-<<<'HTML'
+    <<<'HTML'
 <section class="comment-box">
     <div class="comment-content">
         <h2>Time for a ElePHPant RAVE!</h2>
@@ -140,7 +140,7 @@ dataset('html-fragments', [
     </section>
 </section>
 HTML,
-<<<'HTML'
+    <<<'HTML'
 <article>
     <p>Lorem 😂😂 ipsum 🕵️‍♂️dolor sit✍️ amet, consectetur adipiscing😇😇🤙 elit, sed do eiusmod🥰 tempor 😤😤🏳️‍🌈incididunt ut 👏labore 👏et👏 dolore 👏magna👏 aliqua.</p>
     <p>Ut enim ad minim 🐵✊🏿veniam,❤️😤😫😩💦💦 quis nostrud 👿🤮exercitation ullamco 🧠👮🏿‍♀️🅱️laboris nisi ut aliquip❗️ ex ea commodo consequat.</p>
