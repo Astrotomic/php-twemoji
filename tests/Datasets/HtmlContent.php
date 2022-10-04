@@ -1,14 +1,14 @@
 <?php
 
-dataset('html', [
-    <<<'HTML'
+dataset('html-pages', [
+<<<'HTML'
 <!DOCTYPE html>
 <html lang="en">
   <head></head>
   <body></body>
 </html>
 HTML,
-    <<<'HTML'
+<<<'HTML'
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,7 +21,7 @@ HTML,
     <body></body>
 </html>
 HTML,
-    <<<'HTML'
+<<<'HTML'
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -42,7 +42,7 @@ HTML,
     </body>
 </html>
 HTML,
-    <<<'HTML'
+<<<'HTML'
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -60,7 +60,7 @@ HTML,
     </body>
 </html>
 HTML,
-    <<<'HTML'
+<<<'HTML'
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -84,6 +84,35 @@ HTML,
     </body>
 </html>
 HTML,
+<<<'HTML'
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>HTML 5🚀 Boilerplate</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Do a quick kickflip! 🛹</h1>
+        <p>This is HTML text that should be replaced, but the emoji in the head should not.</p>
+        <h2>Time for a CRAB RAVE!</h2>
+        <p>🦀🦀🦀🦀🦀</p>
+        <p>🦀🦀🦀</p>
+        <p>🦀🦀🦀🦀🦀</p>
+        <h2>🙏🐘</h2>
+        <script type="text/javascript">
+            /* Ensure it won't touch emoji in script sections */
+            var badTime = "💩";
+        </script>
+    </body>
+</html>
+HTML,
+]);
+
+
+dataset('html-fragments', [
 <<<'HTML'
 <section class="comment-box">
     <div class="comment-content">
@@ -110,5 +139,13 @@ HTML,
         </section>
     </section>
 </section>
+HTML,
+<<<'HTML'
+<article>
+    <p>Lorem 😂😂 ipsum 🕵️‍♂️dolor sit✍️ amet, consectetur adipiscing😇😇🤙 elit, sed do eiusmod🥰 tempor 😤😤🏳️‍🌈incididunt ut 👏labore 👏et👏 dolore 👏magna👏 aliqua.</p>
+    <p>Ut enim ad minim 🐵✊🏿veniam,❤️😤😫😩💦💦 quis nostrud 👿🤮exercitation ullamco 🧠👮🏿‍♀️🅱️laboris nisi ut aliquip❗️ ex ea commodo consequat.</p>
+    <p>💯Duis aute💦😂😂😂 irure dolor 👳🏻‍♂️🗿in reprehenderit 🤖👻👎in voluptate velit esse cillum dolore 🙏🙏eu fugiat🤔 nulla pariatur.</p>
+    <p>🙅‍♀️🙅‍♀️Excepteur sint occaecat🤷‍♀️🤦‍♀️ cupidatat💅 non💃 proident,👨‍👧 sunt🤗 in culpa😥😰😨 qui officia🤩🤩 deserunt mollit 🧐anim id est laborum.🤔🤔</p>
+</article>
 HTML,
 ]);

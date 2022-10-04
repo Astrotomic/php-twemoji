@@ -1,4 +1,4 @@
-<html><body><section class="comment-box">
+<section class="comment-box">
     <div class="comment-content">
         <h2>Time for a ElePHPant RAVE!</h2>
         <p><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f418.png" alt="&#128024;" width="72" height="72" loading="lazy" class="twemoji"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f418.png" alt="&#128024;" width="72" height="72" loading="lazy" class="twemoji"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f418.png" alt="&#128024;" width="72" height="72" loading="lazy" class="twemoji"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f418.png" alt="&#128024;" width="72" height="72" loading="lazy" class="twemoji"></p>
@@ -22,4 +22,4 @@
             </div>
         </section>
     </section>
-</section></body></html>
+</section>
