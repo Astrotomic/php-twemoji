@@ -14,7 +14,9 @@ class HtmlReplacer
 {
     use Configurable;
 
-    private const FRAGMENT_TEMPLATE = <<<'HTML'
+    private const UTF8_META = '<meta http-equiv="content-type" content="text/html; charset=utf-8" />';
+
+    private const FRAGMENT_TEMPLATE = <<<HTML
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -51,6 +53,28 @@ HTML;
             $this->findAndTwmojifyTextNodes($parsedHtml);
         } catch (NoTextChildrenException $e) {
             return $html;
+        }
+
+        // Find the page head and check if meta header should be added
+        $htmlHead = $parsedHtmlRoot->filter('head');
+        $addHeader = false;
+        if ($htmlHead->getNode(0)->hasChildNodes()) {
+            $contentTypeMeta = $htmlHead->children('meta[http-equiv="content-type"][content]')->getNode(0);
+            if (
+                $contentTypeMeta === null ||
+                iterator_to_array($contentTypeMeta->attributes)['content']->textContent !== "text/html; charset=utf-8"
+            ) {
+                $addHeader = true;
+            }
+        } else {
+            $addHeader = true;
+        }
+
+        // Adds the necessary meta tag to make PHP's DOM not mangle Emojis
+        if ($addHeader) {
+            $setUtf8Meta = $parsedHtmlRoot->getDOMDocument()->createDocumentFragment();
+            $setUtf8Meta->appendXML(static::UTF8_META);
+            $htmlHead->append($setUtf8Meta);
         }
 
         return $parsedHtmlRoot->saveHTML();
