@@ -3,6 +3,7 @@
 namespace Astrotomic\Twemoji;
 
 use Astrotomic\Twemoji\Concerns\Configurable;
+use Astrotomic\Twemoji\Exceptions\NoTextChildrenException;
 use RuntimeException;
 use Wa72\HtmlPageDom\HtmlPageCrawler;
 

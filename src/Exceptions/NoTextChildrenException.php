@@ -1,6 +1,6 @@
 <?php
 
-namespace Astrotomic\Twemoji;
+namespace Astrotomic\Twemoji\Exceptions;
 
 use Exception;
 
