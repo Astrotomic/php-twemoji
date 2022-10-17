@@ -29,6 +29,7 @@
         "wa72/htmlpagedom": "^2.0 || ^3.0"
     },
     "suggest": {
+        "ext-dom": "*",
         "spatie/emoji": "*",
         "wa72/htmlpagedom": "*"
     },
