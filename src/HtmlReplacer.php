@@ -38,7 +38,7 @@ HTML;
     public function parse(string $html): string
     {
         // Parse the HTML page or fragment...
-        $parsedHtmlRoot = new HtmlPageCrawler($html);
+        $parsedHtmlRoot = HtmlPageCrawler::create($html);
 
         if ($parsedHtmlRoot->isHtmlDocument()) {
             // We will only transform the body...
@@ -60,7 +60,7 @@ HTML;
     {
         $wrappedFragment = sprintf(static::FRAGMENT_TEMPLATE, $html);
 
-        $parsedHtmlRoot = new HtmlPageCrawler($wrappedFragment);
+        $parsedHtmlRoot = HtmlPageCrawler::create($wrappedFragment);
         $parsedHtml = $parsedHtmlRoot->filter('body');
 
         try {
