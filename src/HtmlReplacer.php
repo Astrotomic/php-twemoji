@@ -13,6 +13,18 @@ class HtmlReplacer
 {
     use Configurable;
 
+    private const FRAGMENT_TEMPLATE = <<<'HTML'
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    </head>
+    <body id="wrapper-template">
+%s
+    </body>
+</html>
+HTML;
+
     public function __construct()
     {
         if (! class_exists(HtmlPageCrawler::class)) {
@@ -26,14 +38,50 @@ class HtmlReplacer
     {
         // Parse the HTML page or fragment...
         $parsedHtmlRoot = new HtmlPageCrawler($html);
-        // Filter parsed HTML "root" into the twemoji relevant parts...
-        $parsedHtml = $this->whenHtmlDocFilterBody($parsedHtmlRoot);
+
+        if ($parsedHtmlRoot->isHtmlDocument()) {
+            // We will only transform the body...
+            $parsedHtml = $parsedHtmlRoot->filter('body');
+        } else {
+            return $this->parseFragment($html);
+        }
+
+        try {
+            $this->findAndTwmojifyTextNodes($parsedHtml);
+        } catch (NoTextChildrenException $e) {
+            return $html;
+        }
+
+        return $parsedHtmlRoot->saveHTML();
+    }
+
+    public function parseFragment(string $html): string
+    {
+        $wrappedFragment = sprintf(static::FRAGMENT_TEMPLATE, $html);
+
+        $parsedHtmlRoot = new HtmlPageCrawler($wrappedFragment);
+        $parsedHtml = $parsedHtmlRoot->filter('body');
+
+        try {
+            $this->findAndTwmojifyTextNodes($parsedHtml);
+        } catch (NoTextChildrenException $e) {
+            return $html;
+        }
+
+        return $parsedHtmlRoot->filter('body')->getInnerHtml();
+    }
+
+    /**
+     * @throws NoTextChildrenException
+     */
+    private function findAndTwmojifyTextNodes(HtmlPageCrawler $htmlContent): HtmlPageCrawler
+    {
         // Use xpath to filter only the "TextNodes" within every "Element"
-        $textNodes = $parsedHtml->filterXPath('.//*[normalize-space(text())]');
+        $textNodes = $htmlContent->filterXPath('.//*[normalize-space(text())]');
 
         // If the filtered DOM fragment doesn't have TextNode children, return the input HTML.
         if ($textNodes->count() === 0) {
-            return $html;
+            throw new NoTextChildrenException();
         }
 
         $textNodes->each(function (HtmlPageCrawler $node) {
@@ -46,15 +94,6 @@ class HtmlReplacer
             return $node;
         });
 
-        return $parsedHtmlRoot->saveHTML();
-    }
-
-    private function whenHtmlDocFilterBody(HtmlPageCrawler $htmlRoot): HtmlPageCrawler
-    {
-        if ($htmlRoot->isHtmlDocument()) {
-            return $htmlRoot->filter('body');
-        }
-
-        return $htmlRoot;
+        return $textNodes;
     }
 }
