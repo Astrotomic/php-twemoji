@@ -4,6 +4,7 @@ namespace Astrotomic\Twemoji;
 
 use Astrotomic\Twemoji\Concerns\Configurable;
 use Astrotomic\Twemoji\Exceptions\NoTextChildrenException;
+use DOMDocument;
 use RuntimeException;
 use Wa72\HtmlPageDom\HtmlPageCrawler;
 
@@ -59,22 +60,16 @@ HTML;
         $htmlHead = $parsedHtmlRoot->filter('head');
         $addHeader = false;
         if ($htmlHead->getNode(0)->hasChildNodes()) {
-            $contentTypeMeta = $htmlHead->children('meta[http-equiv="content-type"][content]')->getNode(0);
+            $contentTypeMeta = $htmlHead->children('meta[http-equiv="content-type"][content]');
             if (
-                $contentTypeMeta === null ||
-                iterator_to_array($contentTypeMeta->attributes)['content']->textContent !== "text/html; charset=utf-8"
+                $contentTypeMeta->getNode(0) === null ||
+                iterator_to_array($contentTypeMeta->getNode(0)->attributes)['content']->textContent !== "text/html; charset=utf-8"
             ) {
-                $addHeader = true;
+                $this->addUtf8MetaTag($htmlHead);
+                $contentTypeMeta->remove();
             }
         } else {
-            $addHeader = true;
-        }
-
-        // Adds the necessary meta tag to make PHP's DOM not mangle Emojis
-        if ($addHeader) {
-            $setUtf8Meta = $parsedHtmlRoot->getDOMDocument()->createDocumentFragment();
-            $setUtf8Meta->appendXML(static::UTF8_META);
-            $htmlHead->append($setUtf8Meta);
+            $this->addUtf8MetaTag($htmlHead);
         }
 
         return $parsedHtmlRoot->saveHTML();
@@ -120,5 +115,13 @@ HTML;
         });
 
         return $textNodes;
+    }
+
+    private function addUtf8MetaTag($htmlHead): void
+    {
+        $doc = new DOMDocument();
+        $setUtf8Meta = $doc->createDocumentFragment();
+        $setUtf8Meta->appendXML(static::UTF8_META);
+        $htmlHead->append($setUtf8Meta);
     }
 }

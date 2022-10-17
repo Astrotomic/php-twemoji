@@ -68,7 +68,7 @@ HTML;
     $results = htmlReplacerPngParser($pageHtml);
     expect($results)->toContain('5🚀')->not()->toContain('5&#');
     assertMatchesTextSnapshot($results);
-})->skip('This will fail due to "incorrect" meta charset method, we need to consider how to address that.');
+});
 
 it('will replace the Emoji on page, but not in head - NEW Charset Method', function () {
     $pageHtml = <<<'HTML'
