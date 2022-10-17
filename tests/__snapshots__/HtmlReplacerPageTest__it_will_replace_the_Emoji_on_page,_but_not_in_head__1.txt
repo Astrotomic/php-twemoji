@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,15 +7,12 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Do a quick kickflip! <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f6f9.png" alt="&#128761;" width="72" height="72" loading="lazy" class="twemoji">
-</h1>
+        <h1>Do a quick kickflip! <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f6f9.png" alt="&#128761;" width="72" height="72" loading="lazy" class="twemoji"></h1>
         <p>This is HTML text that should be replaced, but the emoji in the head should not.</p>
         <h2>Time for a CRAB RAVE!</h2>
         <p><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f980.png" alt="&#129408;" width="72" height="72" loading="lazy" class="twemoji"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f980.png" alt="&#129408;" width="72" height="72" loading="lazy" class="twemoji"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f980.png" alt="&#129408;" width="72" height="72" loading="lazy" class="twemoji"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f980.png" alt="&#129408;" width="72" height="72" loading="lazy" class="twemoji"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f980.png" alt="&#129408;" width="72" height="72" loading="lazy" class="twemoji"></p>
         <p><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f980.png" alt="&#129408;" width="72" height="72" loading="lazy" class="twemoji"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f980.png" alt="&#129408;" width="72" height="72" loading="lazy" class="twemoji"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f980.png" alt="&#129408;" width="72" height="72" loading="lazy" class="twemoji"></p>
         <p><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f980.png" alt="&#129408;" width="72" height="72" loading="lazy" class="twemoji"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f980.png" alt="&#129408;" width="72" height="72" loading="lazy" class="twemoji"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f980.png" alt="&#129408;" width="72" height="72" loading="lazy" class="twemoji"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f980.png" alt="&#129408;" width="72" height="72" loading="lazy" class="twemoji"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f980.png" alt="&#129408;" width="72" height="72" loading="lazy" class="twemoji"></p>
-        <h2>
-<img src="https://twemoji.maxcdn.com/v/latest/72x72/1f64f.png" alt="&#128591;" width="72" height="72" loading="lazy" class="twemoji"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f418.png" alt="&#128024;" width="72" height="72" loading="lazy" class="twemoji">
-</h2>
+        <h2><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f64f.png" alt="&#128591;" width="72" height="72" loading="lazy" class="twemoji"><img src="https://twemoji.maxcdn.com/v/latest/72x72/1f418.png" alt="&#128024;" width="72" height="72" loading="lazy" class="twemoji"></h2>
     </body>
 </html>
