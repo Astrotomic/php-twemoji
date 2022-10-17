@@ -1,1 +1,1 @@
-<script>document.innerHTML = '&#129335;&zwj;&#9794;&#65039;';</script>
+<script>document.innerHTML = '🤷‍♂️';</script>
