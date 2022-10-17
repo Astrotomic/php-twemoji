@@ -86,7 +86,7 @@ HTML;
         }
 
         $textNodes->each(function (HtmlPageCrawler $node) {
-            $twemojiContent = (new EmojiText($node->innerText()))
+            $twemojiContent = (new EmojiText($node->getInnerHtml()))
                 ->base($this->base)
                 ->type($this->type)
                 ->toHtml();

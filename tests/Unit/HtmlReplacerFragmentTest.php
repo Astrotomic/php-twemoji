@@ -60,14 +60,19 @@ HTML;
 it('can handle text with an outer P tag', function () {
     $textContent = '<p>This is some fancy-💃 Markdown/WYSIWYG text with surrounding &lt;p&gt; tags enabled. 🎉</p>';
     assertMatchesTextSnapshot(htmlReplacerPngParser($textContent));
-})->skip('Cannot pass until more work is done...');
+});
 
-it('can handle text without outer P tag', function () {
+it('can handle text with an outer P tag and CODE tag', function () {
+    $textContent = '<p>This is some fancy-💃 Markdown/WYSIWYG text with surrounding <code>&lt;p&gt;</code> tags enabled. 🎉</p>';
+    assertMatchesTextSnapshot(htmlReplacerPngParser($textContent));
+});
+
+it('can handle text without outer P tag and escaped HTML', function () {
     $textContent = 'This is some fancy-💃 Markdown/WYSIWYG text with surrounding &lt;p&gt; tags disabled. 🎉';
     assertMatchesTextSnapshot(htmlReplacerPngParser($textContent));
-})->skip('Cannot pass until more work is done...');
+});
 
 it('can handle text without outer P tag but inner HTML', function () {
     $textContent = 'This is some fancy-💃 Markdown/WYSIWYG text with surrounding <code><p></code> tags disabled. 🎉';
     assertMatchesTextSnapshot(htmlReplacerPngParser($textContent));
-})->skip('Cannot pass until more work is done...');
+})->skip('Fails: Mutates the code content to close the p tag');
