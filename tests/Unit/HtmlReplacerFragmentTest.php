@@ -1,10 +1,9 @@
 <?php
 
-use Astrotomic\Twemoji\HtmlReplacer;
 use function Spatie\Snapshots\assertMatchesTextSnapshot;
 
 it('can convert a single emoji paragraph', function () {
-    assertMatchesTextSnapshot(htmlReplacerPngParser("<p>🚀</p>"));
+    assertMatchesTextSnapshot(htmlReplacerPngParser('<p>🚀</p>'));
 });
 
 it('will not convert an emoji within HTML attributes', function () {
@@ -59,16 +58,16 @@ HTML;
 });
 
 it('can handle text with an outer P tag', function () {
-    $textContent = "<p>This is some fancy-💃 Markdown/WYSIWYG text with surrounding &lt;p&gt; tags enabled. 🎉</p>";
+    $textContent = '<p>This is some fancy-💃 Markdown/WYSIWYG text with surrounding &lt;p&gt; tags enabled. 🎉</p>';
     assertMatchesTextSnapshot(htmlReplacerPngParser($textContent));
 });
 
 it('can handle text without outer P tag', function () {
-    $textContent = "This is some fancy-💃 Markdown/WYSIWYG text with surrounding &lt;p&gt; tags disabled. 🎉";
+    $textContent = 'This is some fancy-💃 Markdown/WYSIWYG text with surrounding &lt;p&gt; tags disabled. 🎉';
     assertMatchesTextSnapshot(htmlReplacerPngParser($textContent));
 });
 
 it('can handle text without outer P tag but inner HTML', function () {
-    $textContent = "This is some fancy-💃 Markdown/WYSIWYG text with surrounding <code><p></code> tags disabled. 🎉";
+    $textContent = 'This is some fancy-💃 Markdown/WYSIWYG text with surrounding <code><p></code> tags disabled. 🎉';
     assertMatchesTextSnapshot(htmlReplacerPngParser($textContent));
 });

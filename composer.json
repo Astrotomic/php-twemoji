@@ -26,6 +26,7 @@
         "s9e/regexp-builder": "^1.4",
         "spatie/emoji": "^2.3.0",
         "spatie/pest-plugin-snapshots": "^1.0",
+        "symfony/var-dumper": "^6.1",
         "wa72/htmlpagedom": "^2.0 || ^3.0"
     },
     "suggest": {

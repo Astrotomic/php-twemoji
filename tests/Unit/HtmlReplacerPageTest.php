@@ -39,7 +39,7 @@ it('will not replace a single Emoji in the Title', function () {
 </html>
 HTML;
     $results = htmlReplacerPngParser($pageHtml);
-    expect($results)->toContain("5🚀")->not()->toContain('&#');
+    expect($results)->toContain('5🚀')->not()->toContain('&#');
     assertMatchesTextSnapshot($results);
 });
 
@@ -66,7 +66,6 @@ it('will replace the Emoji on page, but not in head', function () {
 </html>
 HTML;
     $results = htmlReplacerPngParser($pageHtml);
-    expect($results)->toContain("5🚀")->not()->toContain('&#');
+    expect($results)->toContain('5🚀')->not()->toContain('&#');
     assertMatchesTextSnapshot($results);
 });
-
