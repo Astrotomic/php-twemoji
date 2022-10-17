@@ -68,7 +68,7 @@ HTML;
             return $html;
         }
 
-        return $parsedHtmlRoot->filter('body')->getInnerHtml();
+        return trim($parsedHtmlRoot->filter('body')->getInnerHtml());
     }
 
     /**
