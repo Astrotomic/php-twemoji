@@ -17,7 +17,7 @@ class HtmlReplacer
 
     private const UTF8_META = '<meta http-equiv="content-type" content="text/html; charset=utf-8" />';
 
-    private const FRAGMENT_TEMPLATE = <<<HTML
+    private const FRAGMENT_TEMPLATE = <<<'HTML'
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -61,9 +61,10 @@ HTML;
         $addHeader = false;
         if ($htmlHead->getNode(0)->hasChildNodes()) {
             $contentTypeMeta = $htmlHead->children('meta[http-equiv="content-type"][content]');
+            $metaNode = $contentTypeMeta->getNode(0);
             if (
-                $contentTypeMeta->getNode(0) === null ||
-                iterator_to_array($contentTypeMeta->getNode(0)->attributes)['content']->textContent !== "text/html; charset=utf-8"
+                $metaNode === null ||
+                iterator_to_array($metaNode->attributes)['content']->textContent !== 'text/html; charset=utf-8'
             ) {
                 $this->addUtf8MetaTag($htmlHead);
                 $contentTypeMeta->remove();
