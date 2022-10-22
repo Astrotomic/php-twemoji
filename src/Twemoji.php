@@ -16,7 +16,7 @@ class Twemoji implements JsonSerializable
     protected array $codepoints;
 
     /**
-     * @param string[] $codepoints
+     * @param  string[]  $codepoints
      */
     public function __construct(array $codepoints)
     {
