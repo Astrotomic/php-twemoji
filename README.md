@@ -29,10 +29,10 @@ You can use the `Twemoji::emoji()` method to get the Twemoji image URL for a sin
 use Astrotomic\Twemoji\Twemoji;
 
 Twemoji::emoji('🎉')->url();
-// https://twemoji.maxcdn.com/v/latest/svg/1f389.svg
+// https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f389.svg
 
 Twemoji::emoji('🎉')->png()->url();
-// https://twemoji.maxcdn.com/v/latest/72x72/1f389.png
+// https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/72x72/1f389.png
 
 Twemoji::emoji('🎉')->base('https://twemoji.astrotomic.info')->url();
 // https://twemoji.astrotomic.info/svg/1f389.svg
@@ -47,10 +47,10 @@ This isn't aware of emojis in attributes or anything - it just finds and replace
 use Astrotomic\Twemoji\Twemoji;
 
 Twemoji::text("Hello 👋🏿")->toMarkdown();
-// Hello ![👋🏿](https://twemoji.maxcdn.com/v/latest/svg/1f44b-1f3ff.svg)
+// Hello ![👋🏿](https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f44b-1f3ff.svg)
 
 Twemoji::text("Hello 👋🏿")->png()->toMarkdown();
-// Hello ![👋🏿](https://twemoji.maxcdn.com/v/latest/72x72/1f44b-1f3ff.png)
+// Hello ![👋🏿](https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/72x72/1f44b-1f3ff.png)
 ```
 
 In case you want to configure the replacer once and bind it to your container for example you can do that as well.
@@ -61,14 +61,14 @@ use Astrotomic\Twemoji\Replacer;
 $replacer = (new Replacer())->png();
 
 $replacer->text("Hello 👋🏿")->toMarkdown();
-// Hello ![👋🏿](https://twemoji.maxcdn.com/v/latest/72x72/1f44b-1f3ff.png)
+// Hello ![👋🏿](https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/72x72/1f44b-1f3ff.png)
 ```
 
 You can also override the replacer configuration for the specific replace operation without altering the replacer configuration.
 
 ```php
 $replacer->text("Hello 👋🏿")->svg()->toMarkdown();
-// Hello ![👋🏿](https://twemoji.maxcdn.com/v/latest/svg/1f44b-1f3ff.svg)
+// Hello ![👋🏿](https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/1f44b-1f3ff.svg)
 ```
 
 ## Testing

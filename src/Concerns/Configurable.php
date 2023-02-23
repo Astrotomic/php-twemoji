@@ -8,7 +8,7 @@ trait Configurable
 {
     protected string $type = Twemoji::SVG;
 
-    protected string $base = 'https://twemoji.maxcdn.com/v/latest';
+    protected string $base = 'https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets';
 
     public function base(string $base): self
     {
