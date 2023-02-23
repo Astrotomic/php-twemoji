@@ -1,0 +1,4 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"></head>
+  <body>Hey <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f680.png" alt="🚀" width="72" height="72" loading="lazy" class="twemoji"></body>
+</html>
