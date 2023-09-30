@@ -28,14 +28,14 @@ it('can generate PNG url', function (string $emoji, string $twemoji) {
 
 it('can generate custom url', function (string $emoji, string $twemoji) {
     assertEquals(
-        sprintf('https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/%s.svg', $twemoji),
+        sprintf('https://twemoji.astrotomic.info/svg/%s.svg', $twemoji),
         Twemoji::emoji($emoji)->base('https://twemoji.astrotomic.info')->url()
     );
 })->with('emojis');
 
 it('can generate url from spatie/emoji', function (string $emoji) {
     assertMatchesRegularExpression(
-        '/^https:\/\/cdn.jsdelivr.net\/gh\/\/twitter\/twemoji\@latest\/assets\/svg\/([0-9a-f\-]+)\.svg$/',
+        '/^https:\/\/cdn.jsdelivr.net\/gh\/twitter\/twemoji\@latest\/assets\/svg\/([0-9a-f\-]+)\.svg$/',
         Twemoji::emoji($emoji)->url()
     );
 })->with('spatie-emojis');
