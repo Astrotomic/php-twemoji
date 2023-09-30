@@ -10,6 +10,7 @@ class EmojiText
     use Configurable;
 
     protected string $text;
+    protected static ?string $regexp = null;
 
     public function __construct(string $text)
     {
@@ -66,6 +67,9 @@ class EmojiText
 
     protected function regexp(): string
     {
-        return '/'.file_get_contents(__DIR__.'/emoji_bytes.regexp').'/';
+        if (!static::$regexp) {
+            static::$regexp = '/'.file_get_contents(__DIR__.'/emoji_bytes.regexp').'/';
+        }
+        return static::$regexp;
     }
 }
