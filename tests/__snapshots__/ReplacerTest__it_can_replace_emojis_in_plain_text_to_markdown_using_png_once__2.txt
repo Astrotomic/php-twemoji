@@ -1,2 +1,2 @@
-Hello ![👋](https://twemoji.maxcdn.com/v/latest/svg/1f44b.svg),
-Emojis are so cool! ![🎉](https://twemoji.maxcdn.com/v/latest/svg/1f389.svg)![🚀](https://twemoji.maxcdn.com/v/latest/svg/1f680.svg)
+Hello ![👋](https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f44b.svg),
+Emojis are so cool! ![🎉](https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f389.svg)![🚀](https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f680.svg)
